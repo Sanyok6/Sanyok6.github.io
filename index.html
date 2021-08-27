@@ -1,0 +1,287 @@
+<html>
+    <head>
+        <title>Chess Board</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <style>
+			body {
+				background-color:black;
+			}
+
+            .grid-container {
+                display: flex;
+                flex-wrap: nowrap;
+                height:12.5vw;
+            }
+
+            #content {
+               display: flex;
+               flex-wrap: wrap;
+            }
+
+            #board {
+                width:100%;
+                height:100%;
+                margin:5px;
+            }
+            
+            
+            .piece {
+                position: absolute;
+                height:12vw;
+                width:12vw;
+                background-repeat: no-repeat, repeat;
+                background-size: cover;
+                cursor:pointer;
+                padding:-1px;
+            }
+            
+            .dark {
+                background-color:green;
+            }
+            .light {
+                background-color:lightGray;
+            }
+
+            .square {
+                height:100%;
+                width:100%;
+            }
+            .light:hover {filter: brightness(85%)}
+            .dark:hover {filter: brightness(85%)}
+
+
+           @media screen and (orientation:landscape) {
+                #board {
+                     width:96vh;
+                }
+                .grid-container {
+                    height:12vh;
+                    width:96vh;
+                }
+                .piece {
+                    height:12vh;
+                    width:12vh;
+                }
+            }
+                   
+                            
+        </style>
+        <link rel="stylesheet" href="./style.css">
+        
+    </head>
+        
+    <body>
+        <div id="content" draggable="false">
+
+        <div id="board" oncontextmenu="return false;">
+            <div class="grid-container">
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+            </div>
+            <div class="grid-container">
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+                <div class="square dark"><div class="hle"></div></div>
+                <div class="square light"><div class="hle"></div></div>
+            </div>
+        </div>
+        <div id="figures">
+        </div>
+		<div id="arrowsDiv" style="position:absolute;pointer-events: none;" oncontextmenu="return false;">
+		    <svg xmlns="http://www.w3.org/2000/svg" id="theSvg" style="width:100%;height:100%">
+				<defs>
+  					<marker id='arrow-head-blue' orient="auto" markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+						<path d='M0,0 V4 L2,2 Z' fill="blue"/>
+					</marker>
+				</defs>
+				<defs>
+  					<marker id='arrow-head-orange' orient="auto" markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+						<path d='M0,0 V4 L2,2 Z' fill="orange"/>
+					</marker>
+				</defs>
+				<defs>
+  					<marker id='arrow-head-lightGreen' orient="auto" markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+						<path d='M0,0 V4 L2,2 Z' fill="lightGreen"/>
+					</marker>
+				</defs>
+
+           		<g id="arrows"></g>
+				<g id="recomendedMoves"></g>
+				<g id="incompleteArrows"></g>
+			</svg>	
+		</div>
+       
+        <div id="rightPanel">
+            <div id="areasDiv">
+                <div id="practiceArea" class="area" style="text-align: center; position:relative; height:100%">
+                    <h2 style="text-align:center;">Openings Practice</h2>
+                    <p id="practiceText"></p>
+                    <div id="colorChoiceArea">
+                        <div style="display: flex;justify-content: center;">
+                            <div class="colorChoice colorChoiceSelected" id="colorChoiceW" onclick="changeColor('W')"></div>
+                            <button onclick="startPractice()" id="startPracticeBtn">Start Practice</button>
+                            <div class="colorChoice" id="colorChoiceB" onclick="changeColor('B')"></div>
+                        </div>
+                    </div>
+                    <div id="moveOptions" style="display: none;">
+                        <button class="moveOptionBtn">d4</button>
+                    </div>
+
+                    <div id="selectRandom">
+                        <label class="switch">
+                            <input type="checkbox" id="selectRandomCheckbox">
+                            <span class="slider round"></span>
+                         </label>
+                         <p style="margin:6px;">Randomly select variation</p>
+                     </div>
+                </div>
+
+            </div>
+                <div id="buttonsDiv">
+                        <button class="obtn tooltip" onclick="window.location.hash='';window.location.reload(true);">
+                            <span class="tooltiptext">New session</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                              </svg>
+                        </button>
+                        <button class="obtn tooltip" id="pasteBtn">
+                            <span class="tooltiptext">Import moves</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                                </svg>
+                        </button>
+                        <button class="obtn tooltip" id="copyLink">
+                            <span class="tooltiptext">Copy link</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                                <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                            </svg>
+                        </button>
+                        <button class="obtn tooltip" id="openSettings">
+                            <span class="tooltiptext">Open settings</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+                                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+                              </svg>
+                        </button>
+                </div>
+        </div>
+
+
+        <div id="pasteModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal"></span>
+                <textarea id="pasteArea" placeholder="Enter moves in Portable Game Notation (PGN)"></textarea>
+                <div id="pastePgnBtns" style="margin-left:2px;width:100%;">
+                    <input type="file" id="uploadPgnBtn" accept=".pgn"=></button>
+                    <br>
+                    <button id="setupPgnBtn">Setup Practice</button>
+                </div> 
+             </div>
+        </div>
+
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal"></span>
+                <div id="optionsArea" style="color:orange">
+                    <div id="boardColor" class="category">
+                        board color:
+                        <div style="display:flex; flex-wrap:wrap;">
+                            <div style="background-color:green;" class="csquare" onclick="setColor('green');localStorage.setItem('boardColor', 'green')"></div>
+                            <div style="background-color:#d18800;" class="csquare" onclick="setColor('#d18800');localStorage.setItem('boardColor', '#d18800')"></div>
+                            <div style="background-color:#ce7f3b;" class="csquare" onclick="setColor('brown');localStorage.setItem('boardColor', 'brown')"></div>
+                            <div><input type="color" id="cosCol" class="csquare"></div>
+                        </div>
+                    </div>
+                    <div class="category">
+                        Background color:
+                        <input type="color" class="csquare" id="bgColorInput">
+                    </div>
+                    <div class="category" style="border:none;">
+                        <button id="resetSettingsBtn">Reset settings to default</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/chess.js@0.12.0/chess.min.js"></script>
+    <script src="./board.js"></script>
+    <script src="./script.js"></script>
+    <script src="./interface.js"></script>
+</html>
